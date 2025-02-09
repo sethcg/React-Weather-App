@@ -48,14 +48,14 @@ export default function Controls({ markerRef }: Controls) {
   };
 
   return (
-    <>
-      <div className="flex flex-row items-center justify-between gap-8 px-20">
+    <div className="px-12 py-12">
+      <div className="flex flex-row items-center justify-between gap-8">
         <button className={iconClass} onClick={handleProcess}>
           <FaMapMarkerAlt size={24} strokeWidth={2.5} />
         </button>
         <h1>Latitude: {weather?.coord.lat}</h1>
         <h1>Longitude: {weather?.coord.lon}</h1>
       </div>
-    </>
+    </div>
   );
 }

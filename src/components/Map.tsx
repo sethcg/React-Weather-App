@@ -29,8 +29,6 @@ export default function Map() {
     tileSize: 512,
     zoomOffset: -1,
     minZoom: 1,
-    attribution:
-      '\u003ca href="https://www.maptiler.com/copyright/" target="_blank"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href="https://www.openstreetmap.org/copyright" target="_blank"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e',
     crossOrigin: true,
     noWrap: true,
   };
@@ -48,7 +46,7 @@ export default function Map() {
   useEffect(() => {
     mapObject.current = map('map', options);
 
-    const bounds = latLngBounds(latLng(-90, -160), latLng(90, 200));
+    const bounds = latLngBounds(latLng(-90, -180), latLng(90, 180));
     mapObject.current.setMaxBounds(bounds);
 
     mapObject.current.on('click', function (event: LeafletMouseEvent) {
@@ -67,11 +65,11 @@ export default function Map() {
   });
 
   return (
-    <>
-      <div className="relative h-full w-full">
-        <div id="map" className="absolute bottom-0 top-0 h-full min-h-full w-full" />
+    <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-1 w-full min-h-[calc(100vh-52px)] ps-12 py-6">
+      <div className="col-span-2 relative size-full flex justify-start items-center">
+          <div id="map" className="size-[calc(100%-4rem)] border-4 border-neutral-800" />
       </div>
       <Controls markerRef={mapMarker} />
-    </>
+    </div>
   );
 }
