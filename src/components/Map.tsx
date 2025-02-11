@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, RefObject, useRef } from 'react';
-import { Map as LeafletMap, map, Marker, marker, MarkerOptions, IconOptions, icon } from 'leaflet';
+import { Map as LeafletMap, map, Marker, marker, MarkerOptions } from 'leaflet';
 import {
   latLng,
   latLngBounds,
@@ -11,15 +11,18 @@ import {
   LeafletMouseEvent,
 } from 'leaflet';
 
-import Controls from './Controls';
-
 import 'leaflet/dist/leaflet.css';
 
-export default function Map() {
+interface Map {
+  setMapMarker: (marker: Marker) => void;
+  markerOptions: MarkerOptions;
+}
+
+export default function MapData({ markerOptions, setMapMarker }: Map) {
   const url: string = `https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png`;
 
   const options: MapOptions = {
-    center: latLng(38.20365531807151, -99.71191406250001),
+    center: latLng(38, -99),
     minZoom: 3,
     maxZoom: 18,
     zoom: 5,
@@ -33,14 +36,6 @@ export default function Map() {
     noWrap: true,
   };
 
-  const iconOptions: IconOptions = {
-    iconUrl: '/map-marker.svg',
-    iconSize: [24, 24],
-    iconAnchor: [12, 24],
-  };
-  const markerOptions: MarkerOptions = { icon: icon(iconOptions) };
-  const mapMarker: RefObject<Marker | null> = useRef(marker(latLng(0, 0), markerOptions));
-
   const mapObject: RefObject<LeafletMap | null> = useRef(null);
 
   useEffect(() => {
@@ -50,26 +45,23 @@ export default function Map() {
     mapObject.current.setMaxBounds(bounds);
 
     mapObject.current.on('click', function (event: LeafletMouseEvent) {
-      if (mapObject.current === null) return;
+      if (!mapObject.current) return;
 
-      // Remove previous Marker, if necessary
-      if (mapMarker.current) {
-        mapMarker.current.removeFrom(mapObject.current);
-      }
+      // Remove previous marker
+      mapObject.current.getPane('markerPane')?.replaceChildren();
 
-      // Create Marker
-      mapMarker.current = marker(event.latlng, markerOptions).addTo(mapObject.current);
+      // Create new marker
+      setMapMarker(marker(event.latlng, markerOptions).addTo(mapObject.current));
     });
 
     tileLayer(url, tileOptions).addTo(mapObject.current);
-  });
+    // This ensures that mapObject is only created once.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mapObject]);
 
   return (
-    <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-1 w-full min-h-[calc(100vh-52px)] ps-12 py-6">
-      <div className="col-span-2 relative size-full flex justify-start items-center">
-          <div id="map" className="size-[calc(100%-4rem)] border-4 border-neutral-800" />
-      </div>
-      <Controls markerRef={mapMarker} />
+    <div className="relative min-h-[calc(100%-4rem)] w-full flex-grow">
+      <div id="map" className="size-full border-4 border-neutral-800" />
     </div>
   );
 }

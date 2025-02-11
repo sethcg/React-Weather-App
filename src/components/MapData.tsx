@@ -1,20 +1,17 @@
 'use client';
 
 import { LatLng, Marker } from 'leaflet';
-import { RefObject, useState } from 'react';
+import { useState } from 'react';
 
-// import { WiUmbrella } from 'react-icons/wi';
-import { FaMapMarkerAlt } from 'react-icons/fa';
 import { CurrentWeather } from './WeatherType';
+import WeatherButton from './WeatherButton';
+import Weather from './Weather';
 
-const iconClass =
-  'bg-slate-500 hover:bg-slate-700 text-black text-lg font-extrabold p-2 rounded-xl';
-
-interface Controls {
-  markerRef: RefObject<Marker | null>;
+interface MapData {
+  mapMarker: Marker;
 }
 
-export default function Controls({ markerRef }: Controls) {
+export default function MapData({ mapMarker }: MapData) {
   const lang = 'en';
   const units = 'imperial';
 
@@ -22,8 +19,8 @@ export default function Controls({ markerRef }: Controls) {
   const [previousLatLng, setPreviousLatLng] = useState<LatLng | null>(null);
 
   const handleProcess = async () => {
-    if (!markerRef.current) return;
-    const latLng = markerRef.current.getLatLng();
+    if (!mapMarker) return;
+    const latLng = mapMarker.getLatLng();
 
     // Fetch only if the Marker LatLng has changed
     if (
@@ -48,13 +45,10 @@ export default function Controls({ markerRef }: Controls) {
   };
 
   return (
-    <div className="px-12 py-12">
-      <div className="flex flex-row items-center justify-between gap-8">
-        <button className={iconClass} onClick={handleProcess}>
-          <FaMapMarkerAlt size={24} strokeWidth={2.5} />
-        </button>
-        <h1>Latitude: {weather?.coord.lat}</h1>
-        <h1>Longitude: {weather?.coord.lon}</h1>
+    <div className="w-full max-w-[23rem] flex-grow">
+      <div className="flex size-full flex-col items-end justify-between gap-8 border-4 border-neutral-800 py-2">
+        <Weather weatherRef={weather} />
+        <WeatherButton handleProcess={handleProcess} mapMarker={mapMarker} />
       </div>
     </div>
   );
