@@ -1,6 +1,6 @@
 'use client';
 
-import { WiDayRain } from 'react-icons/wi';
+import WeatherIcon from './WeatherIcon';
 import { CurrentWeather } from './WeatherType';
 
 interface Weather {
@@ -22,8 +22,10 @@ function formatDescription(description: string | undefined): string {
 
 export default function Weather({ weatherRef }: Weather) {
   return (
-    <div className="flex w-full flex-col items-center justify-between gap-8 px-2">
-      <WiDayRain size={168} strokeWidth={0.1} />
+    <div className="flex w-full flex-col items-center justify-between gap-8 p-2">
+      <div className="flex min-h-[168px] items-center">
+        <WeatherIcon iconId={weatherRef?.weather[0]?.id} iconCode={weatherRef?.weather[0]?.icon} />
+      </div>
       <div className="flex w-full flex-col items-start gap-4 px-8">
         <div>
           <h1>Latitude: {roundCoordinate(weatherRef?.coord.lat)}</h1>
