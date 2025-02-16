@@ -7,8 +7,12 @@ interface Weather {
   weatherRef: CurrentWeather | null;
 }
 
-function roundCoordinate(num: number | undefined): string {
-  return num ? num.toFixed(3) : '';
+function getLatitude(weather: CurrentWeather | null): string {
+  return weather ? weather.coord.lat.toFixed(3) : '';
+}
+
+function getLongitude(weather: CurrentWeather | null): string {
+  return weather ? weather.coord.lon.toFixed(3) : '';
 }
 
 function roundTemperature(num: number | undefined): string {
@@ -28,10 +32,10 @@ export default function Weather({ weatherRef }: Weather) {
       </div>
       <div className="flex w-full flex-col items-start gap-4 px-8">
         <div>
-          <h1>Latitude: {roundCoordinate(weatherRef?.coord.lat)}</h1>
+          <h1>Latitude: {getLatitude(weatherRef)}</h1>
         </div>
         <div>
-          <h1>Longitude: {roundCoordinate(weatherRef?.coord.lon)}</h1>
+          <h1>Longitude: {getLongitude(weatherRef)}</h1>
         </div>
         <div>
           <h1>Description: {formatDescription(weatherRef?.weather[0].description)}</h1>

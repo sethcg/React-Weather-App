@@ -6,12 +6,14 @@ import { useState } from 'react';
 import { CurrentWeather } from './WeatherType';
 import WeatherButton from './WeatherButton';
 import Weather from './Weather';
+import RemoveButton from './RemoveButton';
 
 interface MapData {
   mapMarker: Marker;
+  removeMarker: () => Promise<void>;
 }
 
-export default function MapData({ mapMarker }: MapData) {
+export default function MapData({ mapMarker, removeMarker }: MapData) {
   const lang = 'en';
   const units = 'imperial';
 
@@ -44,11 +46,17 @@ export default function MapData({ mapMarker }: MapData) {
     }
   };
 
+  const handleRemove = async () => {
+    removeMarker();
+    setWeather(null);
+  };
+
   return (
     <div className="w-full max-w-[23rem] flex-grow">
       <div className="flex size-full flex-col items-end justify-between gap-8 border-4 border-neutral-800 py-2">
-        <Weather weatherRef={weather} />
         <WeatherButton handleProcess={handleProcess} mapMarker={mapMarker} />
+        <Weather weatherRef={weather} />
+        <RemoveButton handleRemove={handleRemove} />
       </div>
     </div>
   );
