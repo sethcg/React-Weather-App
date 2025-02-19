@@ -1,6 +1,7 @@
 'use client';
 
 import WeatherIcon from './WeatherIcon';
+import WeatherItem from './WeatherItem';
 import { CurrentWeather } from './WeatherType';
 
 interface Weather {
@@ -26,26 +27,16 @@ function formatDescription(description: string | undefined): string {
 
 export default function Weather({ weatherRef }: Weather) {
   return (
-    <div className="flex w-full flex-col items-center justify-between gap-8 p-2">
+    <div className="flex flex-grow w-full flex-col items-center gap-2 p-2">
       <div className="flex min-h-[168px] items-center">
         <WeatherIcon iconId={weatherRef?.weather[0]?.id} iconCode={weatherRef?.weather[0]?.icon} />
       </div>
-      <div className="flex w-full flex-col items-start gap-4 px-8">
-        <div>
-          <h1>Latitude: {getLatitude(weatherRef)}</h1>
-        </div>
-        <div>
-          <h1>Longitude: {getLongitude(weatherRef)}</h1>
-        </div>
-        <div>
-          <h1>Description: {formatDescription(weatherRef?.weather[0].description)}</h1>
-        </div>
-        <div>
-          <h1>Min Temp: {`${roundTemperature(weatherRef?.main.temp_min)} °F`}</h1>
-        </div>
-        <div>
-          <h1>Max Temp: {`${roundTemperature(weatherRef?.main.temp_max)} °F`}</h1>
-        </div>
+      <div className="flex w-full flex-col items-start gap-4 px-2">
+        <WeatherItem header={"Latitude"} value={getLatitude(weatherRef)} />
+        <WeatherItem header={"Longitude"} value={getLongitude(weatherRef)} />
+        <WeatherItem header={"Description"} value={formatDescription(weatherRef?.weather[0].description)} />
+        <WeatherItem header={"Min Temperature"} value={roundTemperature(weatherRef?.main.temp_min)} temp={true} />
+        <WeatherItem header={"Max Temperature"} value={roundTemperature(weatherRef?.main.temp_max)} temp={true} />
       </div>
     </div>
   );

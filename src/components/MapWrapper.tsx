@@ -20,7 +20,7 @@ import {
 
 import 'leaflet/dist/leaflet.css';
 import MapData from './MapData';
-import { MapComponent } from './MapComponent';
+import { MapComponent } from './Map';
 
 const url: string = `https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png`;
 
@@ -80,7 +80,7 @@ export default function MapWrapper() {
   }, [mapObject]);
 
   return (
-    <div className="flex min-h-[calc(100vh-68px)] w-full gap-12 px-12 py-12 pb-16">
+    <div className="flex min-h-[calc(100vh-68px)] w-full gap-6 px-12 py-12 pb-16">
       <MapComponent />
       <MapData mapMarker={mapMarker} removeMarker={removeMarker} />
     </div>

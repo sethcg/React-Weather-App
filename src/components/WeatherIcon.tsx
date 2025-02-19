@@ -18,7 +18,7 @@ export default function WeatherIcon({ iconId, iconCode }: WeatherIcon) {
 
   if (name && Icons[name as keyof IconType]) {
     const IconComponent = Icons[name as keyof IconType] as ElementType;
-    Icon = <IconComponent size={168} strokeWidth={0.1} />;
+    Icon = <IconComponent size={24 * 10} strokeWidth={0.1} />;
   }
 
   return Icon;
