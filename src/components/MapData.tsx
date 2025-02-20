@@ -11,9 +11,10 @@ import RemoveButton from './RemoveButton';
 interface MapData {
   mapMarker: Marker;
   removeMarker: () => Promise<void>;
+  zoomToMarker: (latLng: LatLng) => Promise<void>;
 }
 
-export default function MapData({ mapMarker, removeMarker }: MapData) {
+export default function MapData({ mapMarker, removeMarker, zoomToMarker }: MapData) {
   const lang = 'en';
   const units = 'imperial';
 
@@ -41,6 +42,7 @@ export default function MapData({ mapMarker, removeMarker }: MapData) {
         .then(() => {
           // Set previousLatLng to avoid duplicate fetching
           setPreviousLatLng(latLng);
+          zoomToMarker(latLng);
         })
         .catch((error) => console.error(error));
     }

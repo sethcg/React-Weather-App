@@ -27,9 +27,10 @@ const url: string = `https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png
 const options: MapOptions = {
   center: latLng(38, -99),
   minZoom: 3,
-  maxZoom: 18,
+  maxZoom: 14,
   zoom: 5,
-  zoomSnap: 0.3,
+  zoomDelta: 0.75,
+  zoomSnap: 0.5,
 };
 
 const tileOptions: TileLayerOptions = {
@@ -41,9 +42,12 @@ const tileOptions: TileLayerOptions = {
 };
 
 const iconOptions: IconOptions = {
-  iconUrl: '/map-marker.svg',
-  iconSize: [24, 24],
-  iconAnchor: [12, 24],
+  iconUrl: '/marker-icon.png',
+  iconSize: [18, 30],
+  iconAnchor: [12, 30],
+  popupAnchor: [1, -25],
+  // shadowUrl: '/marker-shadow.png',
+  // shadowSize: [30, 30]
 };
 
 export default function MapWrapper() {
@@ -60,7 +64,13 @@ export default function MapWrapper() {
   const removeMarker = async () => {
     if (!mapObject.current) return;
     mapObject.current.getPane('markerPane')?.replaceChildren();
+    mapObject.current.getPane('shadowPane')?.replaceChildren();
     setMapMarker(marker(latLng(0, 0), markerOptions));
+  };
+
+  const zoomToMarker = async (latLng: LatLng) => {
+    if (!mapObject.current) return;
+    mapObject.current.setView(latLng, 6);
   };
 
   useEffect(() => {
@@ -82,7 +92,7 @@ export default function MapWrapper() {
   return (
     <div className="flex min-h-[calc(100vh-68px)] w-full gap-6 px-12 py-12 pb-16">
       <MapComponent />
-      <MapData mapMarker={mapMarker} removeMarker={removeMarker} />
+      <MapData mapMarker={mapMarker} removeMarker={removeMarker} zoomToMarker={zoomToMarker} />
     </div>
   );
 }

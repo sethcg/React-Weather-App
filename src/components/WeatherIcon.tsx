@@ -11,7 +11,7 @@ interface WeatherIcon {
 }
 
 export default function WeatherIcon({ iconId, iconCode }: WeatherIcon) {
-  let Icon = <Icons.WiNa size={120} strokeWidth={0.01} />;
+  let Icon = <Icons.WiNa size={24 * 10} strokeWidth={0.01} />;
 
   if (!iconId || !iconCode) return Icon;
   const name = getIconName(iconId, iconCode);

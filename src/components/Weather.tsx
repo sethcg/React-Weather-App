@@ -27,16 +27,27 @@ function formatDescription(description: string | undefined): string {
 
 export default function Weather({ weatherRef }: Weather) {
   return (
-    <div className="flex flex-grow w-full flex-col items-center gap-2 p-2">
+    <div className="flex w-full flex-grow flex-col items-center gap-2 p-2">
       <div className="flex min-h-[168px] items-center">
         <WeatherIcon iconId={weatherRef?.weather[0]?.id} iconCode={weatherRef?.weather[0]?.icon} />
       </div>
       <div className="flex w-full flex-col items-start gap-4 px-2">
-        <WeatherItem header={"Latitude"} value={getLatitude(weatherRef)} />
-        <WeatherItem header={"Longitude"} value={getLongitude(weatherRef)} />
-        <WeatherItem header={"Description"} value={formatDescription(weatherRef?.weather[0].description)} />
-        <WeatherItem header={"Min Temperature"} value={roundTemperature(weatherRef?.main.temp_min)} temp={true} />
-        <WeatherItem header={"Max Temperature"} value={roundTemperature(weatherRef?.main.temp_max)} temp={true} />
+        <WeatherItem header={'Latitude'} value={getLatitude(weatherRef)} />
+        <WeatherItem header={'Longitude'} value={getLongitude(weatherRef)} />
+        <WeatherItem
+          header={'Description'}
+          value={formatDescription(weatherRef?.weather[0].description)}
+        />
+        <WeatherItem
+          header={'Min Temperature'}
+          value={roundTemperature(weatherRef?.main.temp_min)}
+          temp={true}
+        />
+        <WeatherItem
+          header={'Max Temperature'}
+          value={roundTemperature(weatherRef?.main.temp_max)}
+          temp={true}
+        />
       </div>
     </div>
   );
