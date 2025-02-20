@@ -70,7 +70,12 @@ export default function MapWrapper() {
 
   const zoomToMarker = async (latLng: LatLng) => {
     if (!mapObject.current) return;
-    mapObject.current.setView(latLng, 6);
+    const zoomMin: number = 6;
+    const zoomMax: number = 11;
+    const currentZoom: number = mapObject.current.getZoom();
+    // clamp the zoom to prevent too large of a jump.
+    const zoomLevel: number = Math.min(Math.max(currentZoom, zoomMin), zoomMax);
+    mapObject.current.setView(latLng, zoomLevel);
   };
 
   useEffect(() => {
