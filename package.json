@@ -1,36 +1,42 @@
 {
   "name": "react-weather-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "sethcg",
+  "license": "MIT",
+  "description": "A simple weather display using Next, React, and Typescript.",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format:check": "prettier --check \"**/*.+(js|ts|json|tsx)\"",
+    "format": "prettier --write \"**/*.+(js|ts|json|tsx)\""
   },
   "dependencies": {
+    "@fontsource-variable/roboto-flex": "^5.2.5",
+    "@tailwindcss/postcss": "^4.1.4",
     "leaflet": "^1.9.4",
-    "next": "15.1.6",
-    "react": "^19.0.0-rc.1",
-    "react-dom": "^19.0.0-rc.1",
-    "react-icons": "^5.4.0"
+    "next": "^15.3.1",
+    "postcss": "^8.5.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/leaflet": "^1.9.16",
-    "@types/node": "^20",
+    "@eslint/eslintrc": "^3.3.1",
+    "@types/leaflet": "^1.9.17",
+    "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9.19.0",
-    "eslint-config-next": "15.1.6",
-    "eslint-config-prettier": "^10.0.1",
-    "eslint-plugin-prettier": "^5.2.3",
-    "eslint-plugin-react": "^7.37.4",
-    "postcss": "^8",
-    "prettier": "^3.4.2",
+    "eslint": "^9.25.1",
+    "eslint-config-next": "15.3.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.5",
+    "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5.8.3"
   }
 }

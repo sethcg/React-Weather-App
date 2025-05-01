@@ -9,7 +9,6 @@ import {
   latLngBounds,
   LeafletMouseEvent,
   Map as LeafletMap,
-  map,
   MapOptions,
   marker,
   Marker,
@@ -20,7 +19,7 @@ import {
 
 import 'leaflet/dist/leaflet.css';
 import MapData from './MapData';
-import { MapComponent } from './Map';
+import MapComponent from './MapComponent';
 
 const url: string = `https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png`;
 
@@ -79,7 +78,8 @@ export default function MapWrapper() {
   };
 
   useEffect(() => {
-    mapObject.current = map('map', options);
+    mapObject.current?.remove();
+    mapObject.current = new LeafletMap('map', options);
 
     const bounds = latLngBounds(latLng(-90, -180), latLng(90, 180));
     mapObject.current.setMaxBounds(bounds);

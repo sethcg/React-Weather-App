@@ -1,16 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+import './index.css';
 
 export const metadata: Metadata = {
   title: 'React Weather App',
@@ -24,7 +13,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body
+        className={`dark font-roboto bg-neutral-100 text-neutral-950 antialiased dark:bg-neutral-800 dark:text-neutral-50`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
