@@ -2,33 +2,37 @@
 
 ### Description:
 
-Weather app created using NextJS, React, Typescript, and Tailwind. Pick a location and receive feedback on the current weather data.
+&nbsp;&nbsp;&nbsp;&nbsp;Weather app created using NextJS, React, and Typescript.
 
-#### Features:
+&nbsp;&nbsp;&nbsp;&nbsp;Select a location on the map then press the button to receive the current weather data.
+
+---
+
+### Features:
 
 - [OpenWeather API](https://openweathermap.org/)
 - [Leaflet](https://leafletjs.com/)
 - [Carto Maps](https://carto.com/basemaps)
 
 ---
-
 ### Preview:
-
-![image](https://github.com/user-attachments/assets/852e9ce9-9fe9-46af-a31d-dfbc4916b3bc)
-![image](https://github.com/user-attachments/assets/845bc6bf-db2d-46b2-b429-4ef356945d8d)
+<details open>
+  <img src="https://github.com/user-attachments/assets/998ec1b0-b6e1-4b4e-8cdc-3e01a32ba245" alt="image" style="max-width: 100%;">
+  <br>
+</details>
 
 ---
 
-### Running:
+### Developer Notes:
 
 ```bash
-# Lint using eslint
-npm run lint
+# Clone repository
+git clone https://github.com/sethcg/React-Weather-App.git
 
-# Format using prettier
-npm run format
+# Install dependencies
+npm install
 
-# Run app in dev mode
+# Run application
 npm run dev
 ```
 
