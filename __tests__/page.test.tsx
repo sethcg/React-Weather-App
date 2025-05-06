@@ -8,7 +8,7 @@ describe('Home', () => {
     render(<Home />)
 
     // ACT
-    const heading = await waitFor(() => screen.getAllByRole('heading', { level: 1 }));
+    const heading = await waitFor(() => screen.getAllByRole('heading', { level: 1 }))
 
     // ASSERT
     expect(heading[0]).toHaveTextContent('Weather App')
