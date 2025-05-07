@@ -1,0 +1,349 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Snapshot Renders home page unchanged 1`] = `
+<div>
+  <div
+    class="h-screen w-screen"
+  >
+    <h1
+      class="px-8 py-4 text-left text-3xl font-bold text-neutral-200"
+    >
+      Weather App
+    </h1>
+    <div
+      class="flex min-h-[calc(100vh-68px)] w-full gap-8 p-8 pt-0"
+    >
+      <div
+        class="relative min-h-[calc(100%-4rem)] w-full flex-grow"
+      >
+        <div
+          class="size-full border-4 border-neutral-700 leaflet-container leaflet-touch leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+          id="map"
+          style="position: relative;"
+          tabindex="0"
+        >
+          <div
+            class="leaflet-pane leaflet-map-pane"
+            style="left: 0px; top: 0px;"
+          >
+            <div
+              class="leaflet-pane leaflet-tile-pane"
+            >
+              <div
+                class="leaflet-layer "
+                style="z-index: 1;"
+              >
+                <div
+                  class="leaflet-tile-container leaflet-zoom-animated"
+                  style="z-index: 18; left: 0px; top: 0px;"
+                >
+                  <img
+                    alt=""
+                    class="leaflet-tile"
+                    crossorigin=""
+                    src="https://a.basemaps.cartocdn.com/dark_all/4/3/6@2x.png"
+                    style="width: 512px; height: 512px; left: -307px; top: -88px;"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="leaflet-pane leaflet-overlay-pane"
+            />
+            <div
+              class="leaflet-pane leaflet-shadow-pane"
+            />
+            <div
+              class="leaflet-pane leaflet-marker-pane"
+            />
+            <div
+              class="leaflet-pane leaflet-tooltip-pane"
+            />
+            <div
+              class="leaflet-pane leaflet-popup-pane"
+            />
+          </div>
+          <div
+            class="leaflet-control-container"
+          >
+            <div
+              class="leaflet-top leaflet-left"
+            >
+              <div
+                class="leaflet-control-zoom leaflet-bar leaflet-control"
+              >
+                <a
+                  aria-disabled="false"
+                  aria-label="Zoom in"
+                  class="leaflet-control-zoom-in"
+                  href="#"
+                  role="button"
+                  title="Zoom in"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    +
+                  </span>
+                </a>
+                <a
+                  aria-disabled="false"
+                  aria-label="Zoom out"
+                  class="leaflet-control-zoom-out"
+                  href="#"
+                  role="button"
+                  title="Zoom out"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    −
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="leaflet-top leaflet-right"
+            />
+            <div
+              class="leaflet-bottom leaflet-left"
+            />
+            <div
+              class="leaflet-bottom leaflet-right"
+            >
+              <div
+                class="leaflet-control-attribution leaflet-control"
+              >
+                <a
+                  href="https://leafletjs.com"
+                  title="A JavaScript library for interactive maps"
+                >
+                  Leaflet
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-full max-w-[23rem] flex-grow"
+      >
+        <div
+          class="flex size-full flex-col items-end justify-between border-4 border-neutral-700 py-2"
+        >
+          <div
+            class="flex w-full flex-row items-center justify-between px-2"
+          >
+            <button
+              class="bg-emerald-600/80 hover:bg-emerald-500/80 p-2 rounded-xl w-full cursor-pointer px-2"
+            >
+              <div
+                class="flex w-full flex-row items-center justify-between px-2"
+              >
+                <svg
+                  class="text-neutral-950"
+                  fill="currentColor"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 384 512"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+                  />
+                </svg>
+                <div
+                  class="flex-grow"
+                >
+                  <span
+                    class="text-xl font-bold text-neutral-950"
+                  >
+                    Lat: 
+                    0.000
+                  </span>
+                </div>
+                <div
+                  class="flex-grow"
+                >
+                  <span
+                    class="text-xl font-bold text-neutral-950"
+                  >
+                    Lon: 
+                    0.000
+                  </span>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div
+            class="flex w-full flex-grow flex-col items-center gap-2 p-2"
+          >
+            <div
+              class="flex min-h-[168px] items-center"
+            >
+              <svg
+                fill="currentColor"
+                height="240"
+                id="Layer_1"
+                stroke="currentColor"
+                stroke-width="0.01"
+                version="1.1"
+                viewBox="0 0 30 30"
+                width="240"
+                x="0px"
+                xmlns="http://www.w3.org/2000/svg"
+                y="0px"
+              >
+                <path
+                  d="M6.87,18.23h1.94v-3.64h0.02l2.05,3.64h1.99v-6.66h-1.94v3.55h-0.02l-1.94-3.55h-2.1V18.23z M13.39,18.38h1.43l2.61-6.97
+	h-1.42L13.39,18.38z M16.26,18.23h2.07l0.29-0.95h2.12l0.28,0.95h2.13l-2.43-6.66h-2.01L16.26,18.23z M19.07,15.84l0.64-2.04h0.03
+	l0.6,2.04H19.07z"
+                />
+              </svg>
+            </div>
+            <div
+              class="flex w-full flex-col items-start gap-4 px-2"
+            >
+              <div
+                class="flex w-full flex-row gap-2 text-2xl"
+              >
+                <h1
+                  class=""
+                >
+                  Country:
+                </h1>
+                <h1
+                  class="flex flex-row gap-1"
+                >
+                  <span
+                    class="text-sm font-extrabold"
+                  />
+                </h1>
+              </div>
+              <div
+                class="flex w-full flex-row gap-2 text-2xl"
+              >
+                <h1
+                  class=""
+                >
+                  Locality:
+                </h1>
+                <h1
+                  class="flex flex-row gap-1"
+                >
+                  <span
+                    class="text-sm font-extrabold"
+                  />
+                </h1>
+              </div>
+              <div
+                class="flex w-full flex-row gap-2 text-2xl"
+              >
+                <h1
+                  class=""
+                >
+                  Latitude:
+                </h1>
+                <h1
+                  class="flex flex-row gap-1"
+                >
+                  <span
+                    class="text-sm font-extrabold"
+                  />
+                </h1>
+              </div>
+              <div
+                class="flex w-full flex-row gap-2 text-2xl"
+              >
+                <h1
+                  class=""
+                >
+                  Longitude:
+                </h1>
+                <h1
+                  class="flex flex-row gap-1"
+                >
+                  <span
+                    class="text-sm font-extrabold"
+                  />
+                </h1>
+              </div>
+              <div
+                class="flex w-full flex-row gap-2 text-2xl"
+              >
+                <h1
+                  class=""
+                >
+                  Description:
+                </h1>
+                <h1
+                  class="flex flex-row gap-1"
+                >
+                  <span
+                    class="text-sm font-extrabold"
+                  />
+                </h1>
+              </div>
+              <div
+                class="flex w-full flex-row gap-2 text-2xl"
+              >
+                <h1
+                  class=""
+                >
+                  Min Temperature:
+                </h1>
+                <h1
+                  class="flex flex-row gap-1"
+                >
+                  <span
+                    class="text-sm font-extrabold"
+                  />
+                </h1>
+              </div>
+              <div
+                class="flex w-full flex-row gap-2 text-2xl"
+              >
+                <h1
+                  class=""
+                >
+                  Max Temperature:
+                </h1>
+                <h1
+                  class="flex flex-row gap-1"
+                >
+                  <span
+                    class="text-sm font-extrabold"
+                  />
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex w-full justify-end px-2"
+          >
+            <button
+              class="flex cursor-pointer items-center rounded-2xl p-2 bg-red-800 hover:bg-red-600 text-black text-lg font-extrabold"
+            >
+              <svg
+                fill="currentColor"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2.5"
+                viewBox="0 0 512 512"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m289.94 256 95-95A24 24 0 0 0 351 127l-95 95-95-95a24 24 0 0 0-34 34l95 95-95 95a24 24 0 1 0 34 34l95-95 95 95a24 24 0 0 0 34-34z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

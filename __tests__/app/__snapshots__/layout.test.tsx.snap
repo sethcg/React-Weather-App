@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Root Snapshot Renders root layout unchanged 1`] = `
+<div>
+  <div>
+    Children component
+  </div>
+</div>
+`;

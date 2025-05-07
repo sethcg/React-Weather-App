@@ -1,16 +1,20 @@
-import '@testing-library/jest-dom'
 import { render, screen, waitFor } from '@testing-library/react'
-import Home from '../src/app/page.tsx'
+import Home from '../../src/app/page.tsx'
+
+describe("Home Snapshot", () => {
+  it("Renders home page unchanged", async () => {
+    const { container } = await waitFor(() => render(<Home />));
+
+    expect(container).toMatchSnapshot();
+  });
+});
 
 describe('Home', () => {
   it('Renders the correct heading', async () => {
-    // ARRANGE
     render(<Home />)
 
-    // ACT
     const heading = await waitFor(() => screen.getAllByRole('heading', { level: 1 }))
 
-    // ASSERT
     expect(heading[0]).toHaveTextContent('Weather App')
   })
 })
