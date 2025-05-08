@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapComponent Snapshot Renders MapComponent unchanged 1`] = `
+<div>
+  <div
+    class="relative min-h-[calc(100%-4rem)] w-full flex-grow"
+  >
+    <div
+      class="size-full border-4 border-neutral-700"
+      id="map"
+    />
+  </div>
+</div>
+`;
