@@ -6,6 +6,7 @@ exports[`WeatherButton Snapshot Renders WeatherButton unchanged 1`] = `
     class="flex w-full flex-row items-center justify-between px-2"
   >
     <button
+      aria-label="weather"
       class="bg-emerald-600/80 hover:bg-emerald-500/80 p-2 rounded-xl w-full cursor-pointer px-2"
     >
       <div

@@ -17,7 +17,7 @@ describe('WeatherButton', () => {
     const mapMarker: Marker = marker(latLng(0, 0), {})
     render(<WeatherButton handleProcess={mockCallBack} mapMarker={mapMarker} />)
 
-    const button = await screen.findByRole('button')
+    const button = await screen.findByRole('button', { name: 'weather' })
     fireEvent.click(button)
 
     expect(mockCallBack).toHaveBeenCalled()

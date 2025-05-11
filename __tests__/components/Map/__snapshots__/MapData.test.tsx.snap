@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapData Snapshot Renders MapData unchanged 1`] = `
+<div>
+  <div
+    class="w-full max-w-[23rem] flex-grow"
+  >
+    <div
+      class="flex size-full flex-col items-end justify-between border-4 border-neutral-700 py-2"
+    >
+      <div
+        data-testid="WeatherButton"
+      />
+      <div
+        data-testid="WeatherContainer"
+      />
+      <div
+        data-testid="RemoveButton"
+      />
+    </div>
+  </div>
+</div>
+`;

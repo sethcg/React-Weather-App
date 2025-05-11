@@ -12,7 +12,7 @@ interface Props {
 export const RemoveButton: FunctionComponent<Props> = ({ handleRemove }) => {
   return (
     <div className="flex w-full justify-end px-2">
-      <button className={`flex cursor-pointer items-center rounded-2xl p-2 ${buttonClass}`} onClick={handleRemove}>
+      <button aria-label="remove" className={`flex cursor-pointer items-center rounded-2xl p-2 ${buttonClass}`} onClick={handleRemove}>
         <IoClose size={24} strokeWidth={2.5} />
       </button>
     </div>

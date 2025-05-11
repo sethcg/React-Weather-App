@@ -5,9 +5,7 @@ exports[`WeatherItem Snapshot Renders WeatherItem unchanged 1`] = `
   <div
     class="flex w-full flex-row gap-2 text-2xl"
   >
-    <h1
-      class=""
-    >
+    <h1>
       :
     </h1>
     <h1

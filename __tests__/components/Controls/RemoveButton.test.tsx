@@ -14,7 +14,7 @@ describe('RemoveButton', () => {
     const mockCallBack = jest.fn()
     render(<RemoveButton handleRemove={mockCallBack} />)
 
-    const button = await screen.findByRole('button')
+    const button = await screen.findByRole('button', { name: 'remove' })
     fireEvent.click(button)
 
     expect(mockCallBack).toHaveBeenCalled()

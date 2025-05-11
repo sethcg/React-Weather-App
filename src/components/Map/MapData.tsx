@@ -2,7 +2,7 @@
 
 import { FunctionComponent, useState } from 'react'
 import { LatLng, Marker } from 'leaflet'
-import { Weather } from '../Weather/Weather'
+import { WeatherContainer } from '../Weather/WeatherContainer'
 import { CurrentWeather } from '../Weather/WeatherType'
 import { WeatherButton } from '../Controls/WeatherButton'
 import { RemoveButton } from '../Controls/RemoveButton'
@@ -53,7 +53,7 @@ export const MapData: FunctionComponent<Props> = ({ mapMarker, removeMarker, zoo
     <div className="w-full max-w-[23rem] flex-grow">
       <div className="flex size-full flex-col items-end justify-between border-4 border-neutral-700 py-2">
         <WeatherButton handleProcess={handleProcess} mapMarker={mapMarker} />
-        <Weather weatherRef={weather} />
+        <WeatherContainer weatherRef={weather} />
         <RemoveButton handleRemove={handleRemove} />
       </div>
     </div>

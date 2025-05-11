@@ -44,7 +44,7 @@ interface Props {
   weatherRef: CurrentWeather | null
 }
 
-export const Weather: FunctionComponent<Props> = ({ weatherRef }) => {
+export const WeatherContainer: FunctionComponent<Props> = ({ weatherRef }) => {
   return (
     <div className="flex w-full flex-grow flex-col items-center gap-2 p-2">
       <div className="flex min-h-[168px] items-center">
