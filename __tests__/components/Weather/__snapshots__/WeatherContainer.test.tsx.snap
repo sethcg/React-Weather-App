@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherContainer Snapshot Renders WeatherContainer unchanged 1`] = `
+<div>
+  <div
+    class="flex w-full flex-grow flex-col items-center gap-2 p-2"
+  >
+    <div
+      class="flex min-h-[168px] items-center"
+    >
+      <div
+        data-testid="WeatherIcon"
+      />
+    </div>
+    <div
+      class="flex w-full flex-col items-start gap-4 px-2"
+    >
+      <div
+        data-testid="WeatherItem"
+      />
+      <div
+        data-testid="WeatherItem"
+      />
+      <div
+        data-testid="WeatherItem"
+      />
+      <div
+        data-testid="WeatherItem"
+      />
+      <div
+        data-testid="WeatherItem"
+      />
+      <div
+        data-testid="WeatherItem"
+      />
+      <div
+        data-testid="WeatherItem"
+      />
+    </div>
+  </div>
+</div>
+`;

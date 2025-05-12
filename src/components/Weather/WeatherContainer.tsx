@@ -3,7 +3,7 @@
 import { FunctionComponent } from 'react'
 import { WeatherIcon } from './WeatherIcon'
 import { WeatherItem } from './WeatherItem'
-import { CurrentWeather } from './WeatherType'
+import { CurrentWeather } from '../../shared/WeatherType'
 
 import * as countryJson from '../../app/lib/country.json'
 const countries: Array<Country> = countryJson.data
@@ -48,7 +48,7 @@ export const WeatherContainer: FunctionComponent<Props> = ({ weatherRef }) => {
   return (
     <div className="flex w-full flex-grow flex-col items-center gap-2 p-2">
       <div className="flex min-h-[168px] items-center">
-        <WeatherIcon iconId={weatherRef?.weather[0]?.id} iconCode={weatherRef?.weather[0]?.icon} />
+        <WeatherIcon iconCode={weatherRef?.weather[0]?.icon} />
       </div>
       <div className="flex w-full flex-col items-start gap-4 px-2">
         <WeatherItem header={'Country'} value={getCountryName(weatherRef)} />

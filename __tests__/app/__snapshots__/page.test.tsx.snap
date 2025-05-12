@@ -156,21 +156,17 @@ exports[`Home Snapshot Renders home page unchanged 1`] = `
                   />
                 </svg>
                 <div
-                  class="flex-grow"
+                  class="flex-grow text-xl font-bold text-neutral-950"
                 >
-                  <span
-                    class="text-xl font-bold text-neutral-950"
-                  >
+                  <span>
                     Lat: 
                     0.000
                   </span>
                 </div>
                 <div
-                  class="flex-grow"
+                  class="flex-grow text-xl font-bold text-neutral-950"
                 >
-                  <span
-                    class="text-xl font-bold text-neutral-950"
-                  >
+                  <span>
                     Lon: 
                     0.000
                   </span>

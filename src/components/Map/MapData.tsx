@@ -3,7 +3,7 @@
 import { FunctionComponent, useState } from 'react'
 import { LatLng, Marker } from 'leaflet'
 import { WeatherContainer } from '../Weather/WeatherContainer'
-import { CurrentWeather } from '../Weather/WeatherType'
+import { CurrentWeather } from '../../shared/WeatherType'
 import { WeatherButton } from '../Controls/WeatherButton'
 import { RemoveButton } from '../Controls/RemoveButton'
 
