@@ -17,7 +17,7 @@ exports[`Home Snapshot Renders home page unchanged 1`] = `
         class="relative min-h-[calc(100%-4rem)] w-full flex-grow"
       >
         <div
-          class="size-full border-4 border-neutral-700 leaflet-container leaflet-touch leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+          class="pointer-events-auto size-full border-4 border-neutral-700 leaflet-container leaflet-touch leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
           id="map"
           style="position: relative;"
           tabindex="0"

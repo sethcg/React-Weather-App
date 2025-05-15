@@ -55,16 +55,28 @@ const MapWrapper: FunctionComponent = () => {
 
   const mapObject: RefObject<LeafletMap | null> = useRef(null)
 
+  const createMapMarker = async (latLng: LatLng) => {
+    const mapMarkerValue: Marker = marker(latLng, markerOptions)
+
+    // On left click, remove mapMarker
+    mapMarkerValue.on('contextmenu', removeMarker)
+
+    return mapMarkerValue
+  }
+
   const addMarker = async (latLng: LatLng) => {
     if (!mapObject.current) return
-    setMapMarker(marker(latLng, markerOptions).addTo(mapObject.current))
+    const mapMarkerValue: Marker = await createMapMarker(latLng)
+    setMapMarker(mapMarkerValue.addTo(mapObject.current))
   }
 
   const removeMarker = async () => {
     if (!mapObject.current) return
     mapObject.current.getPane('markerPane')?.replaceChildren()
     mapObject.current.getPane('shadowPane')?.replaceChildren()
-    setMapMarker(marker(latLng(0, 0), markerOptions))
+
+    const mapMarkerValue: Marker = await createMapMarker(latLng(0, 0))
+    setMapMarker(mapMarkerValue)
   }
 
   const zoomToMarker = async (latLng: LatLng) => {
@@ -80,6 +92,7 @@ const MapWrapper: FunctionComponent = () => {
   useEffect(() => {
     mapObject.current?.remove()
     mapObject.current = new LeafletMap('map', options)
+    mapObject.current.doubleClickZoom.disable()
 
     const bounds = latLngBounds(latLng(-90, -180), latLng(90, 180))
     mapObject.current.setMaxBounds(bounds)
