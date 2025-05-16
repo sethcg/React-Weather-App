@@ -7,7 +7,7 @@ exports[`RemoveButton Snapshot Renders RemoveButton unchanged 1`] = `
   >
     <button
       aria-label="remove"
-      class="flex cursor-pointer items-center rounded-2xl p-2 bg-red-800 hover:bg-red-600 text-black text-lg font-extrabold"
+      class="flex cursor-pointer items-center rounded-2xl p-2 bg-red-800/50 hover:bg-red-600/80 text-black"
     >
       <svg
         fill="currentColor"

@@ -20,6 +20,7 @@ import {
 import 'leaflet/dist/leaflet.css'
 import { MapData } from './MapData'
 import { MapComponent } from './MapComponent'
+import { CurrentWeather } from '@/shared/WeatherType'
 
 const url: string = `https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png`
 
@@ -52,6 +53,7 @@ const iconOptions: IconOptions = {
 const MapWrapper: FunctionComponent = () => {
   const markerOptions: MarkerOptions = { icon: icon(iconOptions) }
   const [mapMarker, setMapMarker] = useState<Marker>(marker(latLng(0, 0), markerOptions))
+  const [weather, setWeather] = useState<CurrentWeather | null>(null)
 
   const mapObject: RefObject<LeafletMap | null> = useRef(null)
 
@@ -77,6 +79,7 @@ const MapWrapper: FunctionComponent = () => {
 
     const mapMarkerValue: Marker = await createMapMarker(latLng(0, 0))
     setMapMarker(mapMarkerValue)
+    setWeather(null)
   }
 
   const zoomToMarker = async (latLng: LatLng) => {
@@ -110,7 +113,15 @@ const MapWrapper: FunctionComponent = () => {
   return (
     <div className="flex min-h-[calc(100vh-68px)] w-full gap-8 p-8 pt-0">
       <MapComponent />
-      <MapData mapMarker={mapMarker} removeMarker={removeMarker} zoomToMarker={zoomToMarker} />
+      <MapData
+        mapMarker={mapMarker}
+        removeMarker={removeMarker}
+        zoomToMarker={zoomToMarker}
+        weatherRef={weather}
+        setWeather={(currentWeather: CurrentWeather | null) => {
+          setWeather(currentWeather)
+        }}
+      />
     </div>
   )
 }

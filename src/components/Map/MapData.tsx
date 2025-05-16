@@ -9,15 +9,16 @@ import { RemoveButton } from '../Controls/RemoveButton'
 
 interface Props {
   mapMarker: Marker
+  weatherRef: CurrentWeather | null
+  setWeather: (currentWeather: CurrentWeather | null) => void
   removeMarker: () => Promise<void>
   zoomToMarker: (latLng: LatLng) => Promise<void>
 }
 
-export const MapData: FunctionComponent<Props> = ({ mapMarker, removeMarker, zoomToMarker }) => {
+export const MapData: FunctionComponent<Props> = ({ mapMarker, removeMarker, zoomToMarker, weatherRef, setWeather }) => {
   const lang = 'en'
   const units = 'imperial'
 
-  const [weather, setWeather] = useState<CurrentWeather | null>(null)
   const [previousLatLng, setPreviousLatLng] = useState<LatLng | null>(null)
 
   const handleProcess = async () => {
@@ -53,7 +54,7 @@ export const MapData: FunctionComponent<Props> = ({ mapMarker, removeMarker, zoo
     <div className="w-full max-w-[23rem] flex-grow">
       <div className="flex size-full flex-col items-end justify-between border-4 border-neutral-700 py-2">
         <WeatherButton handleProcess={handleProcess} mapMarker={mapMarker} />
-        <WeatherContainer weatherRef={weather} />
+        <WeatherContainer weatherRef={weatherRef} />
         <RemoveButton handleRemove={handleRemove} />
       </div>
     </div>

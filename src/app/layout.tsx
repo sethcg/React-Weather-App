@@ -3,16 +3,16 @@ import type { Metadata } from 'next'
 import './index.css'
 
 export const metadata: Metadata = {
-  title: 'React Weather App',
-  description: 'Uses a public weather API to display data relevant to the provided address.',
+  title: 'React Weather Application',
+  description: 'Weather application',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
-  const bodyClass = 'm-0 p-0 font-roboto bg-neutral-900 text-neutral-100 antialiased'
+  const bodyClass = 'm-0 p-0 font-roboto text-neutral-300 antialiased'
 
   return (
     <html lang="en">
-      <body className={bodyClass}>{children}</body>
+      <body className={`bg-neutral-900 ${bodyClass}`}>{children}</body>
     </html>
   )
 }

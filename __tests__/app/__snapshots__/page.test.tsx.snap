@@ -6,7 +6,7 @@ exports[`Home Snapshot Renders home page unchanged 1`] = `
     class="h-screen w-screen"
   >
     <h1
-      class="px-8 py-4 text-left text-3xl font-bold text-neutral-200"
+      class="px-8 py-4 text-3xl font-bold text-neutral-200 select-none"
     >
       Weather App
     </h1>
@@ -136,13 +136,12 @@ exports[`Home Snapshot Renders home page unchanged 1`] = `
           >
             <button
               aria-label="weather"
-              class="bg-emerald-600/80 hover:bg-emerald-500/80 p-2 rounded-xl w-full cursor-pointer px-2"
+              class="w-full rounded-xl cursor-pointer p-2 bg-emerald-700 hover:bg-emerald-600 hover:drop-shadow-md hover:drop-shadow-emerald-500/50  text-neutral-950"
             >
               <div
                 class="flex w-full flex-row items-center justify-between px-2"
               >
                 <svg
-                  class="text-neutral-950"
                   fill="currentColor"
                   height="24"
                   stroke="currentColor"
@@ -156,7 +155,7 @@ exports[`Home Snapshot Renders home page unchanged 1`] = `
                   />
                 </svg>
                 <div
-                  class="flex-grow text-xl font-bold text-neutral-950"
+                  class="flex-grow text-xl font-bold"
                 >
                   <span>
                     Lat: 
@@ -164,7 +163,7 @@ exports[`Home Snapshot Renders home page unchanged 1`] = `
                   </span>
                 </div>
                 <div
-                  class="flex-grow text-xl font-bold text-neutral-950"
+                  class="flex-grow text-xl font-bold"
                 >
                   <span>
                     Lon: 
@@ -308,7 +307,7 @@ exports[`Home Snapshot Renders home page unchanged 1`] = `
           >
             <button
               aria-label="remove"
-              class="flex cursor-pointer items-center rounded-2xl p-2 bg-red-800 hover:bg-red-600 text-black text-lg font-extrabold"
+              class="flex cursor-pointer items-center rounded-2xl p-2 bg-red-800/50 hover:bg-red-600/80 text-black"
             >
               <svg
                 fill="currentColor"
