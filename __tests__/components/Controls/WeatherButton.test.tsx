@@ -5,7 +5,9 @@ import { latLng, marker, Marker } from 'leaflet'
 describe('WeatherButton Snapshot', () => {
   it('Renders WeatherButton unchanged', async () => {
     const mapMarker: Marker = marker(latLng(0, 0), {})
-    const { container } = await waitFor(() => render(<WeatherButton handleProcess={async () => {}} mapMarker={mapMarker} />))
+    const { container } = await waitFor(() =>
+      render(<WeatherButton handleProcess={async () => {}} mapMarker={mapMarker} />),
+    )
 
     expect(container).toMatchSnapshot()
   })

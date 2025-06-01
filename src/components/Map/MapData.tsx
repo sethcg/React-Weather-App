@@ -15,7 +15,13 @@ interface Props {
   zoomToMarker: (latLng: LatLng) => Promise<void>
 }
 
-export const MapData: FunctionComponent<Props> = ({ mapMarker, removeMarker, zoomToMarker, weatherRef, setWeather }) => {
+export const MapData: FunctionComponent<Props> = ({
+  mapMarker,
+  removeMarker,
+  zoomToMarker,
+  weatherRef,
+  setWeather,
+}) => {
   const lang = 'en'
   const units = 'imperial'
 

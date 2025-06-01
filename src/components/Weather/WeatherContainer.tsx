@@ -56,8 +56,16 @@ export const WeatherContainer: FunctionComponent<Props> = ({ weatherRef }) => {
         <WeatherItem header={'Latitude'} value={getLatitude(weatherRef)} />
         <WeatherItem header={'Longitude'} value={getLongitude(weatherRef)} />
         <WeatherItem header={'Description'} value={getDescription(weatherRef?.weather[0].description)} />
-        <WeatherItem header={'Min Temperature'} value={roundTemperature(weatherRef?.main.temp_min)} isTemperature={true} />
-        <WeatherItem header={'Max Temperature'} value={roundTemperature(weatherRef?.main.temp_max)} isTemperature={true} />
+        <WeatherItem
+          header={'Min Temperature'}
+          value={roundTemperature(weatherRef?.main.temp_min)}
+          isTemperature={true}
+        />
+        <WeatherItem
+          header={'Max Temperature'}
+          value={roundTemperature(weatherRef?.main.temp_max)}
+          isTemperature={true}
+        />
       </div>
     </div>
   )

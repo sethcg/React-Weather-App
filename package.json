@@ -17,6 +17,7 @@
   "dependencies": {
     "@fontsource-variable/roboto-flex": "^5.2.5",
     "@tailwindcss/postcss": "^4.1.4",
+    "clsx": "^2.1.1",
     "leaflet": "^1.9.4",
     "next": "^15.3.1",
     "postcss": "^8.5.3",

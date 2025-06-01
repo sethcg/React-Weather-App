@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import type { Metadata } from 'next'
+import { clsx } from 'clsx'
 import './index.css'
 
 export const metadata: Metadata = {
@@ -8,11 +9,9 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
-  const bodyClass = 'm-0 p-0 font-roboto text-neutral-300 antialiased'
-
   return (
     <html lang="en">
-      <body className={`bg-neutral-900 ${bodyClass}`}>{children}</body>
+      <body className={clsx('font-roboto m-0 p-0 antialiased', 'bg-neutral-900 text-neutral-300')}>{children}</body>
     </html>
   )
 }
