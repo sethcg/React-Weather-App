@@ -2,7 +2,7 @@
 
 ### Description:
 
-<p style="color: red;">
+<p>
   Weather app created using NextJS, React, and Typescript.
   <br>
   Select a location on the map then press the button to receive the current weather data.
@@ -22,6 +22,7 @@
 ---
 ### Preview:
 <details open>
+  <summary>Show</summary>
   <img src="https://github.com/user-attachments/assets/998ec1b0-b6e1-4b4e-8cdc-3e01a32ba245" alt="image" style="max-width: 100%;">
   <br>
 </details>
@@ -40,6 +41,59 @@ npm install
 # Run Application
 npm run dev
 ```
+
+---
+
+### Docker Notes:
+
+<p>
+  Below are docker commands to setup both the development and production ready environments.
+</p>
+
+<details closed>
+<summary>Development</summary>
+  
+```bash
+# Create docker network
+docker network create react-weather-app-network
+
+# Build docker image
+docker compose -f compose.dev.yaml build
+
+# Run docker container
+docker compose -f compose.dev.yaml up -d
+```
+
+</details>
+
+<details closed>
+<summary>Production</summary>
+
+```bash
+# Create docker network
+docker network create react-weather-app-network
+
+# Build docker image
+docker compose -f compose.prod.yaml build
+
+# Run docker container
+docker compose -f compose.prod.yaml up -d
+```
+
+</details>
+
+<details closed>
+<summary>Remove Image/Container</summary>
+
+```bash
+# Stop Docker Container
+docker stop react-weather-app
+
+# Remove/Free Space
+docker system prune -af --volumes
+```
+
+</details>
 
 ---
 
