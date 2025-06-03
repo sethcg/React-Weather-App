@@ -17,7 +17,7 @@
 - [x] Linting (ESLint)
 - [x] Formatting (Prettier)
 - [x] Testing (Jest)
-- [ ] Containerized (Docker)
+- [x] Containerized (Docker)
 
 ---
 ### Preview:

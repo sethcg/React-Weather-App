@@ -60,7 +60,7 @@ export const MapData: FunctionComponent<Props> = ({
     <div className="w-full max-w-[23rem] flex-grow">
       <div className="flex size-full flex-col items-end justify-between border-4 border-neutral-700 py-2">
         <WeatherButton handleProcess={handleProcess} mapMarker={mapMarker} />
-        <WeatherContainer weatherRef={weatherRef} />
+        <WeatherContainer weatherRef={weatherRef} weather={weatherRef?.weather ? weatherRef.weather[0] : null} />
         <RemoveButton handleRemove={handleRemove} />
       </div>
     </div>

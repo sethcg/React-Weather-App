@@ -1,0 +1,18 @@
+# DOCKER FILES
+prod.Dockerfile
+.dockerignore
+
+# MODULES
+node_modules
+
+# TESTS
+__tests__
+.swc
+
+# LOGS
+npm-debug.log
+
+# MISC
+README.md
+.next
+.git
