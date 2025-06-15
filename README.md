@@ -105,4 +105,4 @@ docker system prune -af --volumes
 
 <br />
 
-> The beginning of wisdom is this: Get wisdom. Though it cost all you have, get understanding.
+> The beginning of wisdom is: Acquire wisdom; And with all your acquiring, get understanding.
