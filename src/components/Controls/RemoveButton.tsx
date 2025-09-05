@@ -15,7 +15,7 @@ export const RemoveButton: FunctionComponent<Props> = ({ handleRemove }) => {
         aria-label="remove"
         className={clsx(
           'flex cursor-pointer items-center rounded-2xl p-2',
-          'bg-red-800/50 text-black hover:bg-red-600/80',
+          'bg-red-800 text-black hover:bg-red-600/50',
         )}
         onClick={handleRemove}>
         <IoClose size={24} strokeWidth={2.5} />

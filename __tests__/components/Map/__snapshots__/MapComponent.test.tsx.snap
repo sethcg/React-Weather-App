@@ -6,7 +6,7 @@ exports[`MapComponent Snapshot Renders MapComponent unchanged 1`] = `
     class="relative min-h-[calc(100%-4rem)] w-full flex-grow"
   >
     <div
-      class="pointer-events-auto size-full border-4 border-neutral-700"
+      class="border-border pointer-events-auto size-full border-4"
       id="map"
     />
   </div>

@@ -3,4 +3,12 @@
 
 @theme {
   --font-roboto: "Roboto Flex Variable", sans-serif;
+
+  --color-border: oklch(0.35 0 320);
+
+  --color-primary: oklch(0.25 0 320);
+  --color-secondary: oklch(0.2 0 320);
+
+  --color-danger: oklab(0.55 0.2 0.09);
+  --color-success: oklab(0.62 -0.17 0.11);
 }

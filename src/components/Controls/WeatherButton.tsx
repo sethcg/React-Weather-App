@@ -21,8 +21,8 @@ export const WeatherButton: FunctionComponent<Props> = ({ handleProcess, mapMark
         aria-label="weather"
         className={clsx(
           'w-full cursor-pointer rounded-xl p-2',
-          'bg-emerald-700 text-neutral-950',
-          'hover:bg-emerald-600 hover:drop-shadow-md hover:drop-shadow-emerald-500/50',
+          'bg-success text-black',
+          'hover:bg-success/90 hover:drop-shadow-success/40 hover:drop-shadow-md',
         )}
         onClick={handleProcess}>
         <div className="flex w-full flex-row items-center justify-between px-2">

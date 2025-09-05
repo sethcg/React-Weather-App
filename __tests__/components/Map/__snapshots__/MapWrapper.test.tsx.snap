@@ -3,10 +3,10 @@
 exports[`MapData Snapshot Renders MapData unchanged 1`] = `
 <div>
   <div
-    class="w-full max-w-[23rem] flex-grow"
+    class="bg-secondary w-full max-w-[23rem] flex-grow"
   >
     <div
-      class="flex size-full flex-col items-end justify-between border-4 border-neutral-700 py-2"
+      class="border-border flex size-full flex-col items-end justify-between border-4 py-2"
     >
       <div
         data-testid="WeatherButton"

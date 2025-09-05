@@ -6,7 +6,7 @@ exports[`Home Snapshot Renders home page unchanged 1`] = `
     class="h-screen w-screen"
   >
     <h1
-      class="px-8 py-4 text-3xl font-bold text-neutral-200 select-none"
+      class="px-8 py-4 text-3xl font-bold select-none"
     >
       Weather App
     </h1>
@@ -17,7 +17,7 @@ exports[`Home Snapshot Renders home page unchanged 1`] = `
         class="relative min-h-[calc(100%-4rem)] w-full flex-grow"
       >
         <div
-          class="pointer-events-auto size-full border-4 border-neutral-700 leaflet-container leaflet-touch leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+          class="border-border pointer-events-auto size-full border-4 leaflet-container leaflet-touch leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
           id="map"
           style="position: relative;"
           tabindex="0"
@@ -126,17 +126,17 @@ exports[`Home Snapshot Renders home page unchanged 1`] = `
         </div>
       </div>
       <div
-        class="w-full max-w-[23rem] flex-grow"
+        class="bg-secondary w-full max-w-[23rem] flex-grow"
       >
         <div
-          class="flex size-full flex-col items-end justify-between border-4 border-neutral-700 py-2"
+          class="border-border flex size-full flex-col items-end justify-between border-4 py-2"
         >
           <div
             class="flex w-full flex-row items-center justify-between px-2"
           >
             <button
               aria-label="weather"
-              class="w-full cursor-pointer rounded-xl p-2 bg-emerald-700 text-neutral-950 hover:bg-emerald-600 hover:drop-shadow-md hover:drop-shadow-emerald-500/50"
+              class="w-full cursor-pointer rounded-xl p-2 bg-success text-black hover:bg-success/90 hover:drop-shadow-success/40 hover:drop-shadow-md"
             >
               <div
                 class="flex w-full flex-row items-center justify-between px-2"
@@ -307,7 +307,7 @@ exports[`Home Snapshot Renders home page unchanged 1`] = `
           >
             <button
               aria-label="remove"
-              class="flex cursor-pointer items-center rounded-2xl p-2 bg-red-800/50 text-black hover:bg-red-600/80"
+              class="flex cursor-pointer items-center rounded-2xl p-2 bg-red-800 text-black hover:bg-red-600/50"
             >
               <svg
                 fill="currentColor"
